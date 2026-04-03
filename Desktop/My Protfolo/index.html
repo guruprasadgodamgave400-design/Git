@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guruprasad - Full Stack Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(22, 22, 49);
+            color: white;
+            font-family: "Poppins", sans-serif;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 90px;
+            padding: 0 24px;
+            background: linear-gradient(120deg, rgba(15,16,54,0.95), rgba(25,28,92,0.95));
+            box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        nav .left {
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 0.35px;
+            color: #fff;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0px 23px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #e8e8ff;
+            padding: 10px 14px;
+            border-radius: 10px;
+            transition: background-color 0.25s ease, transform 0.25s ease, color 0.25s ease;
+            font-weight: 600;
+            letter-spacing: 0.2px;
+        }
+
+        nav ul li a.active,
+        nav ul li a:hover {
+            color: #fff;
+            background: rgba(124, 58, 237, 0.34);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(124, 58, 237, 0.35);
+        }
+
+        nav ul li a:hover {
+            color: rgb(158, 158, 228);
+            background-color: rgba(255, 255, 255, 0.08);
+            transform: translateY(-1px);
+        }
+
+        @media (max-width: 900px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+                height: auto;
+                padding: 10px 16px;
+            }
+
+            nav .left {
+                margin-bottom: 10px;
+                font-size: 1.2rem;
+            }
+
+            nav .right {
+                width: 100%;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                gap: 8px;
+            }
+
+            nav ul li {
+                margin: 4px 0;
+            }
+
+            .firstSection {
+                flex-direction: column;
+                margin: 70px 0;
+            }
+
+            .firstSection > div {
+                width: 100%;
+            }
+
+            .rightSection img {
+                width: 100%;
+                margin: 0;
+            }
+
+            .buttons {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .btn {
+                width: 100%;
+                font-size: 18px;
+            }
+        }
+
+        main hr {
+            border: 0;
+            background: #9c97f1;
+            height: 1.2px;
+            margin: 60px 84px;
+        }
+
+        .contact-link {
+            color: white;
+            /* purple accent for Contact Me */
+            font-weight: 100;
+        }
+
+        .contact-link:hover {
+            color: #c084fc;
+        }
+
+        .left {
+            font-size: 1.5rem;
+        }
+
+        .firstSection {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 130px 0px;
+
+        }
+
+        .firstSection>div {
+            width: 45%;
+        }
+
+        .leftSection {
+            font-size: 3rem;
+
+        }
+        .leftSection .buttons{
+            padding: 23px 0px;
+
+        }
+
+        .leftSection .btn {
+            padding: 12px;
+            background: #1e2167;
+            color: white;
+            border: 2px solid white;
+            border-radius: 6px;
+            font-size: 20px;
+            cursor: pointer;
+
+        }
+
+        .rightSection img {
+            width: 80%;
+            margin: -65px 0px;
+
+
+        }
+
+        .purple {
+            color: rgb(186, 126, 243);
+        }
+
+        #element {
+            color: rgb(186, 126, 243);
+
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        .btn {
+            background-color: rgb(186, 126, 243);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .btn:hover {
+            background-color: rgb(158, 100, 215);
+        }
+
+        .text-gray {
+            color: gray;
+        }
+
+        .secondSection {
+            max-width: 96vw;
+            margin: 0 auto;
+            padding: 60px 0 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 14px;
+        }
+
+        .secondSection .header-block {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+            margin-left: 4%;
+        }
+
+        .secondSection h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            line-height: 1.05;
+        }
+
+        .timeline {
+            width: 100%;
+            position: relative;
+            padding-top: 60px;
+        }
+
+        .timeline-bar {
+            position: absolute;
+            top: 58px;
+            left: 5%;
+            right: 5%;
+            height: 2px;
+            background: white;
+            z-index: 1;
+        }
+
+        .timeline-row {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            z-index: 2;
+            position: relative;
+        }
+
+        .timeline-card {
+            position: relative;
+            width: calc((100% - 10px) / 6);
+            min-width: 150px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            border-radius: 14px;
+            padding: 18px 12px 14px;
+            text-align: center;
+            color: white;
+            overflow: visible;
+        }
+
+        .timeline-card .marker {
+            position: absolute;
+            left: 50%;
+            top: -24px;
+            width: 40px;
+            height: 40px;
+            transform: translateX(-50%);
+            border-radius: 50%;
+            background: white;
+            border: 3px solid #7c3aed;
+            z-index: 3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .timeline-card .marker img {
+            width: 28px;
+            height: 28px;
+        }
+
+        .timeline-card .vertical-line {
+            position: absolute;
+            left: 50%;
+            top: 16px;
+            width: 2px;
+            height: 36px;
+            background: white;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        .timeline-card .marker {
+            margin: 0 auto;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: white;
+            border: 2px solid #7c3aed;
+            margin-bottom: 6px;
+        }
+
+        .timeline-card h3 {
+            font-size: 1.25rem;
+            margin: 12px 0 4px;
+        }
+
+        .timeline-card p {
+            color: #b8b8e3;
+            font-size: 0.85rem;
+            line-height: 1.35;
+        }
+
+        .image-top {
+            width: 23px;
+            position: relative;
+            top: -32px;
+            left: -9px;
+
+        }
+
+        .vertical-title {
+            position: relative;
+            top: 75px;
+            width: 150px;
+        }
+
+        .vertical-desc {
+            position: relative;
+            top: 86px;
+            color: gray;
+            width: 150px;
+            font-size: 9px;
+        }
+
+        footer {
+            background-color: #0e0e1a;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 60px;
+            padding: 30px 24px;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+        .footer-left {
+            flex: 1 1 280px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .footer-connect {
+            flex: 1 1 320px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .social-links {
+            justify-content: center;
+        }
+
+        .footer-left h3,
+        .footer-connect h4 {
+            margin: 0 0 10px;
+            color: #fff;
+        }
+
+        .footer ul {
+            list-style: none;
+        }
+
+        .footer>div {
+            width: 233px;
+        }
+
+        .footer-fourth h4 {
+            margin-bottom: 10px;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .social-icon {
+            width: 32px;
+            height: 32px;
+            display: block;
+        }
+
+        .social-links a:hover .social-icon {
+            transform: scale(1.08);
+            transition: transform 0.2s ease;
+        }
+
+        footer .footer-rights {
+            text-align: center;
+            color: gray;
+            padding: 12px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left"> Guruprasad's Portfolio</div>
+            <div class="right">
+                <ul>
+                    <li><a href="#top">Home</a></li>
+                    <li><a href="#languages">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a class="contact-link" href="#contact">Contact Me</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="firstSection">
+            <div class="leftSection">
+                Hi, My name is <span class="purple"> Guruprasad </span>
+                <div>and I am a passionate </div>
+
+                <div><span id="element"> </span></div>
+                <div class="buttons">
+                    <button class="btn" onclick="window.open('https://drive.google.com/uc?export=download&id=1AER65V-7U7lLSIcTwzb-G2QeeiWKZPRk')"> Download Resume</button>
+                    <button class="btn" onclick="window.open('https://github.com/guruprasadgodamgave400-design')">Visit Github</button>
+                </div>
+            </div>
+            <div class="rightSection">
+                <img src="bg.png" alt="">
+            </div>
+        </section>
+        <hr>
+        <section class="secondSection" id="languages">
+            <div class="header-block">
+                <span class="text-gray">What I have learn so far</span>
+                <h1>Languages</h1>
+            </div>
+            <div class="timeline">
+                <div class="timeline-bar"></div>
+                <div class="timeline-row">
+                    <div class="timeline-card">
+                        <div class="marker"><img src="html.png" alt="" /></div>
+                        <!-- <div class="vertical-line"></div> -->
+                        <h3>HTML </h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                    <div class="timeline-card">
+                        <div class="marker"><img src="node js.png" alt="" /></div>
+                        <!-- <div class="vertical-line"></div> -->
+                        <h3>Node.js </h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                    <div class="timeline-card">
+                        <div class="marker"><img src="React.png" alt="" /></div>
+                        <!-- <div class="vertical-line"></div> -->
+                        <h3>React </h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                    <div class="timeline-card">
+                        <div class="marker"><img src="MongoDB.png" alt="" /></div>
+                        <!-- <div class="vertical-line"></div> -->
+                        <h3>MongoDB</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                    <div class="timeline-card">
+                        <div class="marker"><img src="Python.png" alt="" /></div>
+                        <!-- <div class="vertical-line"></div> -->
+                        <h3>Python</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                    <div class="timeline-card">
+                        <div class="marker"><img src="dsA.png" alt="" /></div>
+                        <!-- <div class="vertical-line"></div> -->
+                        <h3>DSA</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer">
+            
+            <div class="footer-connect">
+                <h4>Connect with me</h4>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/guruprasad-godamgave-b6ba21314?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" class="social-icon" />
+                    </a>
+                    <a href="https://www.instagram.com/its_photographer_guru/" target="_blank" rel="noopener" aria-label="Instagram">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="social-icon" />
+                    </a>
+                    <a href="mailto:guruprasdgodamgave400@gmail.com" aria-label="Email">
+                        <img src="https://cdn-icons-png.flaticon.com/512/281/281769.png" alt="Email" class="social-icon" />
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-rights">
+            www.guruprasadsportfolio.com | All rights reserved &copy; 2026
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/typed.js@3.0.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Web Developer', 'Professional  Photographer', 'Video Editor'],
+            typeSpeed: 50,
+        });
+    </script>
+</body>
+
+</html>
