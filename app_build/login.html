@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login | VidyaShikhar</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        .login-box { max-width: 400px; margin: 100px auto; padding: 2rem; background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .form-group { margin-bottom: 1rem; }
+        .form-group label { display: block; margin-bottom: 0.5rem; }
+        .form-group input { width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px; }
+        #error { color: red; margin-bottom: 1rem; display: none; text-align: center; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="login-box">
+        <h2 style="text-align: center; font-family: 'Outfit', sans-serif;">Admin Login</h2>
+        <div id="error">Invalid email or password</div>
+        <form id="login-form">
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="email" placeholder="admin@gmail.com" required>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="password" placeholder="123456" required>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+        </form>
+    </div>
+
+    <!-- 1. Global Config -->
+    <script src="config.js"></script>
+    <!-- 2. Frontend Logic -->
+    <script src="login.js"></script>
+</body>
+</html>

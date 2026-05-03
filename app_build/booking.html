@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Demo Class | VidyaShikhar Academy</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .booking-page { min-height: 100vh; display: flex; align-items: center; justify-content: center; background-color: var(--color-secondary); padding: 2rem; }
+        .booking-container { background: var(--color-white); padding: 3rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); max-width: 500px; width: 100%; }
+        .booking-header { text-align: center; margin-bottom: 2rem; }
+        .booking-header i { font-size: 3rem; color: var(--color-primary); margin-bottom: 1rem; }
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-text-dark); }
+        .form-control { width: 100%; padding: 0.8rem 1rem; border: 1.5px solid #e2e8f0; border-radius: var(--radius-md); font-family: var(--font-body); font-size: 1rem; }
+        #form-message { margin-top: 1.5rem; padding: 1rem; border-radius: var(--radius-md); display: none; text-align: center; font-weight: 600; border: 1px solid #ddd; }
+        .back-link { display: block; text-align: center; margin-top: 1.5rem; color: var(--color-text-body); font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+    <div class="booking-page">
+        <div class="booking-container">
+            <div class="booking-header">
+                <i class="fas fa-graduation-cap"></i>
+                <h1>Book Your Free Demo</h1>
+                <p>Start your preparation with VidyaShikhar experts</p>
+            </div>
+
+            <form id="booking-form">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" class="form-control" placeholder="Enter mobile number" required>
+                </div>
+                <div class="form-group">
+                    <label for="course">Select Course *</label>
+                    <select id="course" class="form-control" required>
+                        <option value="">-- Choose a Course --</option>
+                        <option value="MPSC Foundation">MPSC Foundation Batch</option>
+                        <option value="UPSC Prelims + Mains">UPSC Prelims + Mains</option>
+                        <option value="Banking & SSC">Banking & SSC Preparation</option>
+                        <option value="Test Series">Test Series & Mock Interviews</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Confirm Booking</button>
+            </form>
+
+            <div id="form-message"></div>
+
+            <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        </div>
+    </div>
+
+    <!-- 1. Global Config -->
+    <script src="config.js"></script>
+
+    <!-- 1. Global Config -->
+    <script src="config.js"></script>
+
+    <!-- 2. Frontend Logic -->
+    <script src="booking.js"></script>
+</body>
+</html>

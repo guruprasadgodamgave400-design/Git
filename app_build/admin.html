@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | VidyaShikhar Academy</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body { background: #f8fafc; padding: 2rem; }
+        .admin-dashboard { max-width: 1100px; margin: 0 auto; background: white; padding: 2.5rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        .admin-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #edf2f7; padding-bottom: 1.5rem; margin-bottom: 2rem; }
+        .admin-header h2 { font-family: var(--font-heading); color: var(--color-primary); }
+        table { width: 100%; border-collapse: collapse; }
+        th { background: #f1f5f9; padding: 1rem; text-align: left; font-weight: 700; color: #475569; }
+        td { padding: 1rem; border-bottom: 1px solid #edf2f7; color: #1e293b; }
+        tr:hover { background: #f8fafc; }
+        .msg { text-align: center; padding: 3rem; font-size: 1.1rem; color: #64748b; }
+        .logout-btn { background: #ef4444; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 8px; cursor: pointer; font-weight: 600; transition: 0.3s; }
+        .logout-btn:hover { background: #dc2626; }
+    </style>
+</head>
+<body>
+    <div class="admin-dashboard">
+        <div class="admin-header">
+            <h2><i class="fas fa-users-cog"></i> Student Inquiries</h2>
+            <button class="logout-btn" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </div>
+
+        <div id="loading-msg" class="msg"><i class="fas fa-spinner fa-spin"></i> Fetching bookings...</div>
+        <div id="no-data-msg" class="msg" style="display: none;">No bookings found in database.</div>
+
+        <table id="booking-table" style="display: none;">
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Course Interested</th>
+                </tr>
+            </thead>
+            <tbody id="booking-list">
+                <!-- Data injected here -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 1. Global Config -->
+    <script src="config.js"></script>
+    <!-- 2. Frontend Logic -->
+    <script src="admin.js"></script>
+</body>
+</html>
